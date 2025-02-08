@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+.event {
+    padding: 80px 0;
+
+    &--one {
+        background-image: linear-gradient($colorOne, $colorTwo);
+    }
+
+    &--two {
+        background-image: linear-gradient($colorTwo, $colorThree);
+    }
+
+    &--three {
+        background-image: linear-gradient($colorThree, $colorTwo);
+    }
+
+    &--four {
+        background-image: linear-gradient($colorTwo, $colorOne);
+    }
+
+    &--image-left {
+        .container {
+            flex-direction: row-reverse;
+        }       
+    }
+
+    .container {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__details {
+
+        &__title,
+        &__text {
+            color: $textColor;
+        }
+
+        &__title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        &__text {
+            font-size: 22px;
+            line-height: 28px;
+            text-align: justify;
+        }
+    }
+
+    &__image {
+        max-width: 360px;
+        border-radius: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        &__image {
+            max-width: 250px;
+            width: 100%;
+        }
+
+        &__details {
+            &__title {
+                font-size: 20px;
+            }
+    
+            &__text {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 40px 0;
+
+        .container {
+            display: block;
+        }
+
+        &__image {
+            max-width: 100%;
+        }
+
+        &__details {
+            margin-right: 0;
+            margin-bottom: 16px;
+
+            &__title {
+                font-size: 20px;
+            }
+    
+            &__text {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+}
