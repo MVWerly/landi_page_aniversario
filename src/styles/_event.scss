@@ -3,31 +3,47 @@
 .event {
     padding: 80px 0;
 
-    &--one {
+    &--gradient-one {
         background-image: linear-gradient($colorOne, $colorTwo);
     }
 
-    &--two {
+    &--gradient-two {
         background-image: linear-gradient($colorTwo, $colorThree);
     }
 
-    &--three {
+    &--gradient-three {
         background-image: linear-gradient($colorThree, $colorTwo);
     }
 
-    &--four {
+    &--gradient-four {
         background-image: linear-gradient($colorTwo, $colorOne);
     }
 
     &--image-left {
         .container {
-            flex-direction: row-reverse;
+            :nth-child(1) {
+                order: 2;
+            }
+    
+            :nth-child(2) {
+                order: 1;
+            }
         }       
     }
 
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text image";
         gap: 40px;
+
+        .container:nth-child(1) {
+            order: 1;
+        }
+
+        .container:nth-child(2) {
+            order: 2;
+        }
     }
 
     &__details {
@@ -51,16 +67,11 @@
     }
 
     &__image {
-        max-width: 360px;
+        max-width: 100%;
         border-radius: 30px;
     }
 
     @media (max-width: 1024px) {
-        &__image {
-            max-width: 250px;
-            width: 100%;
-        }
-
         &__details {
             &__title {
                 font-size: 20px;

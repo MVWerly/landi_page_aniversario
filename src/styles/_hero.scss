@@ -13,8 +13,7 @@
     }
 
     &__title,
-    &__text,
-    &__text span {
+    &__text {
         font-family: $friendsFont, sans-serif;
         font-weight: bold;
         text-align: center;
@@ -45,11 +44,11 @@
     }
 
     &__text {
+        display: block;
+        margin-top: 40px;
+        padding-bottom: 110px;
         font-size: 35px;
-
-        span {
-            color: $textColor;
-        }
+        color: $textColor;
     }
 
     @media (max-width: 1024px) {
@@ -60,16 +59,15 @@
         }
 
         &__title {
-            font-size: 30px;
+            font-size: 28px;
             line-height: 50px;
-            letter-spacing: 3px;
+            letter-spacing: 0;
             padding-top: 0;
         }  
 
         &__text {
-            padding-top: 20px;
             font-size: 24px;
-            padding-bottom: 0;
+            padding-bottom: 30px;
         }
     }
 
@@ -87,8 +85,9 @@
         }  
 
         &__text {
+            margin: 0;
             padding-top: 0;
-            padding-bottom: 0;
+            padding-bottom: 20px;
             font-size: 12px;
         }
     }
